@@ -26,3 +26,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+## Run Docker image in Development Mode
+ docker run -it --rm --name serverinfo  -p 4200:4200  -e CHOKIDAR_USEPOLLING=true  sfgroups/serverinfo:1.0
+
+## Run with file system mounted.
+
+
+docker run -it --rm --name serverinfo  -p 4200:4200  -e CHOKIDAR_USEPOLLING=true \
+  -v ${PWD}:/usr/src/app \
+  -v /usr/src/app/node_modules \
+  -e CHOKIDAR_USEPOLLING=true sfgroups/serverinfo:1.0
+  
