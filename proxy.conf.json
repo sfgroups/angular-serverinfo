@@ -1,0 +1,11 @@
+{
+    "/proxy/*": {
+    "target": "https://sfgroups.com/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {"^/proxy" : ""}
+    },
+    "changeOrigin": true
+  
+  }
